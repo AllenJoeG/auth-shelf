@@ -40,8 +40,9 @@ Our client, Prime Digital Academy: Room 2, has asked for an app to simulate the 
 
 We recommend working in groups of 4 or 6 and pair programming for this project. Each pair should take on one of the following features. You will want to identify any tasks that need to be finished in a particular order as a group to avoid merge conflicts. Each of the following features should be on a separate route.
 
-##### Display all Items
+#### Display all Items
 [ 👍 ] DB auth_shelf w tables "user", "item" created 
+[ 👍 ] Plan of attack complete. no spies.
 
 [ ] GET does not need auth
 [ ] reducer to hold the db.rows getshelf.reducer.js
@@ -51,7 +52,7 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 
 The Shelf page (`ShelfPage.js`at `/shelf`) should show all of the items stored in the database in a list or table.
 
-##### Add Items to the Shelf
+#### Add Items to the Shelf
 
 [ ] POST use req.user auth for WHO added it
 [ ] reducer to hold the POST  shelf item object postshelf.reducer.js
@@ -61,7 +62,7 @@ The Shelf page (`ShelfPage.js` at `/shelf`) should allow a user to add a new ite
 
 > NOTE: Image url should be a full path to an existing image on the web. You should not attempt to implement image upload for this.
 
-##### Delete Items from the Shelf
+#### Delete Items from the Shelf
 
 [ ] DELETE use req.user auth for whether you can DELETE it or not.
 [ ] req.params hold the ID of thing to delete
