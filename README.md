@@ -47,8 +47,11 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 [ ] GET does not need auth
 [ 👍 ] reducer to hold the db.rows getshelf.reducer.js
 [ 👍 ] saga to hold the GET AXIOS SEPARATE FILES getshelf.saga.js
-[ ] Need to build serverside GET route
+[ 👍 ] Need to build serverside GET route
 [ 👍 ] export ShelfPage and put it in the route
+
+[ 👍 ] ShelfDisplay component
+[ ] map through setshelf.reducer and display in a list
 
 The Shelf page (`ShelfPage.js`at `/shelf`) should show all of the items stored in the database in a list or table.
 
@@ -57,7 +60,7 @@ The Shelf page (`ShelfPage.js`at `/shelf`) should show all of the items stored i
 dispatch 'ADD_SHELF_ITEM'
 [ ] POST use req.user auth for WHO added it
 [ 👍 ] two inputs and submit button
-[ ] Need to build server route
+[ 👍 ] Need to build server route
 [ 👍 ] saga to dispatch to, holds the AXIOS POST postshelf.reducer.js
 
 The Shelf page (`ShelfPage.js` at `/shelf`) should allow a user to add a new item to the database (which should immediately appear in the list).

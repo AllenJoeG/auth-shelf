@@ -5,7 +5,7 @@ function* getShelf(action){
   console.log(action)
   try {
     const response = yield axios({
-      method: 'POST',
+      method: 'GET',
       url: '/api/shelf',
     })
     yield put({ 
