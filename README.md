@@ -69,9 +69,9 @@ The Shelf page (`ShelfPage.js` at `/shelf`) should allow a user to add a new ite
 
 #### Delete Items from the Shelf
 
-[ ] DELETE use req.user auth for whether you can DELETE it or not.
-[ ] req.params hold the ID of thing to delete
-[ ] saga what dispatches AXIOS DELETE deleteshelf.saga.js
+[ 👍 ] DELETE use req.user auth for whether you can DELETE it or not.
+[ 👍 ] req.params hold the ID of thing to delete
+[ 👍 ] saga what dispatches AXIOS DELETE deleteshelf.saga.js
 
 An authenticated user should be able to delete items from the shelf if they were the one who added the item to the shelf.
 

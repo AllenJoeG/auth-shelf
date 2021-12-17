@@ -14,7 +14,8 @@ function* deleteShelf(action) {
       type: "GET_SHELF",
     });
   } catch (error) {
-    console.log("error Deleting from Client to Server", error);
+    window.alert('You are not authorized to delete this image.');
+    // console.log("error Deleting from Client to Server", error);
   }
 }
 
