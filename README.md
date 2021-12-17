@@ -51,7 +51,7 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 [ 👍 ] export ShelfPage and put it in the route
 
 [ 👍 ] ShelfDisplay component
-[ ] map through setshelf.reducer and display in a list
+[ 👍 ] map through setshelf.reducer and display in a list
 
 The Shelf page (`ShelfPage.js`at `/shelf`) should show all of the items stored in the database in a list or table.
 
@@ -71,7 +71,6 @@ The Shelf page (`ShelfPage.js` at `/shelf`) should allow a user to add a new ite
 
 [ ] DELETE use req.user auth for whether you can DELETE it or not.
 [ ] req.params hold the ID of thing to delete
-[ ] reducer (?)
 [ ] saga what dispatches AXIOS DELETE deleteshelf.saga.js
 
 An authenticated user should be able to delete items from the shelf if they were the one who added the item to the shelf.
@@ -79,12 +78,10 @@ An authenticated user should be able to delete items from the shelf if they were
 > NOTE: This should require client and server changes. An unauthenticated attacker from Postman should not be able to delete anything.
 
 ##### SHELF PAGE
-[ ] map through getshelf.reducer list em, tack on ID
-[ ] returns description, image, and DELETE button 
+[ 👍 ] map through getshelf.reducer list em, tack on ID
+[ 👍 ] returns description, image, and DELETE button 
 
-[ ] form element with "description" and "image_url"
-
-[ ] plugged into Nav in a Protected Route
+[ 👍 ] form element with "description" and "image_url"
 
 ### Stretch Goals
 

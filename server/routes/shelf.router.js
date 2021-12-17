@@ -20,6 +20,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
  * Add an item for the logged in user to the shelf
  */
 router.post('/', rejectUnauthenticated, (req, res) => {
+  
   console.log(req.user);
   console.log(req.body);
   //build INSERT INTO query
@@ -44,6 +45,40 @@ router.post('/', rejectUnauthenticated, (req, res) => {
  * Delete an item if it's something the logged in user added
  */
 router.delete('/:id', (req, res) => {
+  //req.params as "id" value of the item
+  // console.log(req.params.id);
+  // //req.user.id as value of "user_id"
+  // console.log(req.user.id);
+
+  //check and see if the "user_id" value of the row "id" matches req.user.id
+  //query SELECT * FROM "item" WHERE "id" = req.params
+  pool.query(`SELECT * FROM "item" WHERE "id"=$1`, [req.params.id])
+    .then((result) => {
+      console.log(result.rows);
+        //access the "user_id" in .then(result) 
+      const authID = result.rows[0].user_id;
+      console.log(authID);
+      
+      const query2 = `DELETE FROM "item" WHERE "id"=$1 AND "user_id"=$2`;
+      const values2 = [req.params.id, authID]
+      pool.query(query2, values2)
+      .then(() => res.sendStatus(202))
+      .catch((error) => {
+        console.log('joe you shortsighted fool', error);
+        //catch and send_status(4XX) don't have authentication
+        res.sendStatus(400);
+      })
+    })
+    //first query catch
+    .catch((error) => {
+      console.log(error);
+    })
+  
+  
+    //IF the user_id returned from query matchs req.user.id
+    //.then we fire off the delete query
+    //DELETE FROM "item" WHERE "id" = req.params "user_id" = req.user.id
+
   // endpoint functionality
 });
 

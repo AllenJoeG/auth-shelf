@@ -11,12 +11,23 @@ export default function ShelfDisplay() {
         dispatch ({ type: "GET_SHELF"});
     }, [])
 
+    const removeItem = (id) => {
+      dispatch ({
+        type: 'DELETE_ITEM',
+        payload: id
+      })
+    }
+
   return (
     <div>
       <p>I am Shelf Display</p>
       <ul>
         {items.map((item) => {
-          return <li><img src={item.image_url}/><p>{item.description}</p></li>
+          return <li key={item.id}>
+              <img height="300px" src={item.image_url}/>
+              <p>{item.description}</p>
+              <button onClick={e => removeItem(item.id)}> 🚫  💀  📵 </button>
+            </li>
         })}
       </ul>
     </div>
