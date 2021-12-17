@@ -61,7 +61,7 @@ router.delete('/:id', (req, res) => {
       
       if (authID === req.user.id) {
         const query2 = `DELETE FROM "item" WHERE "id"=$1;`;
-        const values2 = [req.params.id, authID]
+        const values2 = [req.params.id]
         pool.query(query2, values2)
         .then(() => res.sendStatus(202))
         .catch((error) => {
