@@ -87,11 +87,11 @@ An authenticated user should be able to delete items from the shelf if they were
 
 - Ability to edit an existing item on the shelf from the info page.
 
-[ ] fix up InfoPage
-[ ] think what are we editing
-[ ] PUT route to update
-[ ] map reducer onto a table
-[ ] description, url and EDIT button
+[ 👍 ] fix up InfoPage
+[ 👍] think what are we editing
+[ 👍] PUT route to update
+[ 👍] map reducer onto a table
+[ 👍] description, url and EDIT button
 
 
 - Have anyone, not just logged in users, be able to see what is on the shelf, but not edit, remove, nor add.
