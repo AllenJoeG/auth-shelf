@@ -2,6 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
+  background-color: purple;
 }
 
 body {
@@ -109,4 +110,35 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+}
+
+.tableStyles {
+  color: black;
+  background-color: #FFFFFF;
+  border: 3px solid #2DACB0;
+  text-align: center;
+  padding: 1rem;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+th {
+  color: green;
+}
+
+td {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  text-decoration-line: underline;
 }

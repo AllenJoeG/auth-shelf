@@ -86,6 +86,14 @@ An authenticated user should be able to delete items from the shelf if they were
 ### Stretch Goals
 
 - Ability to edit an existing item on the shelf from the info page.
+
+[ ] fix up InfoPage
+[ ] think what are we editing
+[ ] PUT route to update
+[ ] map reducer onto a table
+[ ] description, url and EDIT button
+
+
 - Have anyone, not just logged in users, be able to see what is on the shelf, but not edit, remove, nor add.
 - Add a new route to display all items for a specific user called "My Shelf". The client-side url should be `/shelf/2` where `/2` should be the id of the logged in user. Only the items associated with the specific logged in user should be displayed on this new page.
 - Use "Filestack" for image upload on the add page.

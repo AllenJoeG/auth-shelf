@@ -6,7 +6,7 @@ function* deleteShelf(action) {
   try {
     const response = yield axios({
       method: "DELETE",
-      url: `/api/shelf/${action.payload}`,
+      url: `/api/shelf/${action.payload.id}`,
     });
     //action.payload will be req.params on the ^^ server side ^^
     // call the dispatch that GETs the shelf items
@@ -15,7 +15,7 @@ function* deleteShelf(action) {
     });
   } catch (error) {
     window.alert('You are not authorized to delete this image.');
-    // console.log("error Deleting from Client to Server", error);
+    // console.log("error deleting from Client to Server", error);
   }
 }
 

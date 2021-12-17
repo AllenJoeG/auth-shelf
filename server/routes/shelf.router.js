@@ -77,8 +77,6 @@ router.delete('/:id', (req, res) => {
     .catch((error) => {
       console.log(error);
     })
-
-  // endpoint functionality
 });
 
 /**
@@ -86,6 +84,40 @@ router.delete('/:id', (req, res) => {
  */
 //STRETCH GOAL
 router.put('/:id', (req, res) => {
+  //req.params as "id" value of the item
+  // console.log(req.params.id);
+  // //req.user.id as value of "user_id"
+  console.log(req.user.id);
+
+  //check and see if the "user_id" value of the row "id" matches req.user.id
+  //query SELECT * FROM "item" WHERE "id" = req.params
+  pool.query(`SELECT * FROM "item" WHERE "id"=$1`, [req.params.id])
+    .then((result) => {
+      console.log(result.rows);
+        //access the "user_id" in .then(result) 
+      const authID = result.rows[0].user_id;
+      console.log(authID);
+      
+      if (authID === req.user.id) {
+        const query2 = `UPDATE "item"
+                        SET "description"=$1, "image_url"=$2
+                        WHERE "id"=$3;`;
+        const values2 = [req.body.description, req.body.image_url, req.params.id]
+        pool.query(query2, values2)
+        .then(() => res.sendStatus(202))
+        .catch((error) => {
+          console.log('joe you foresighted genius', error);
+        })
+      } else {
+        //catch and send_status(4XX) don't have authentication
+        res.sendStatus(400);
+      }
+
+    })
+    //first query catch
+    .catch((error) => {
+      console.log(error);
+    })
   // endpoint functionality
 });
 
