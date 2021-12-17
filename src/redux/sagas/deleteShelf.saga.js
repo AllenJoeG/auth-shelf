@@ -6,7 +6,7 @@ function* deleteShelf(action) {
   try {
     const response = yield axios({
       method: "DELETE",
-      url: `/api/shelf/${action.payload.id}`,
+      url: `/api/shelf/${action.payload}`,
     });
     //action.payload will be req.params on the ^^ server side ^^
     // call the dispatch that GETs the shelf items
